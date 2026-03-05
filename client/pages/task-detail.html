@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Validation Room - Task Detail</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body data-page="task-detail">
+    <div class="bg-shape bg-shape-a"></div>
+    <div class="bg-shape bg-shape-b"></div>
+
+    <main class="container">
+      <header class="page-header">
+        <div>
+          <p class="eyebrow">Validation Room</p>
+          <h1>Task Detail</h1>
+        </div>
+        <a class="btn btn-ghost" href="/pages/dashboard.html">Back to Dashboard</a>
+      </header>
+
+      <section class="panel">
+        <h2>Task Information</h2>
+        <form id="task-update-form" class="grid-form"></form>
+      </section>
+
+      <section class="panel">
+        <h2>Checklist</h2>
+        <form id="checklist-form" class="inline-form">
+          <input type="text" name="content" placeholder="Add checklist item" required />
+          <button type="submit" class="btn btn-primary">Add</button>
+        </form>
+        <ul id="checklist-list" class="list"></ul>
+      </section>
+
+      <section class="panel">
+        <h2>Progress Logs</h2>
+        <form id="progress-form" class="inline-form">
+          <textarea name="entry_text" rows="2" placeholder="Describe your progress" required></textarea>
+          <button type="submit" class="btn btn-primary">Add Log</button>
+        </form>
+        <ul id="progress-list" class="list"></ul>
+      </section>
+
+      <section class="panel">
+        <h2>Bugs Identified</h2>
+        <form id="bug-form" class="grid-form compact">
+          <label>
+            Bug title
+            <input type="text" name="title" required maxlength="200" />
+          </label>
+          <label>
+            External URL (optional)
+            <input type="url" name="external_bug_url" />
+          </label>
+          <label class="full-width">
+            Description
+            <textarea name="description" rows="3" required></textarea>
+          </label>
+          <div class="actions full-width">
+            <button type="submit" class="btn btn-primary">Add Bug</button>
+          </div>
+        </form>
+        <ul id="bugs-list" class="list"></ul>
+      </section>
+    </main>
+
+    <div id="toast" class="toast"></div>
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>
