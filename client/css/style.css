@@ -104,6 +104,14 @@ h1 {
   padding: 1rem;
 }
 
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
 .hidden {
   display: none;
 }
@@ -191,6 +199,31 @@ textarea {
 
 .full-width {
   grid-column: 1 / -1;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.detail-field {
+  border: 1px solid var(--line);
+  background: #fff;
+  border-radius: 10px;
+  padding: 0.65rem;
+}
+
+.detail-label {
+  margin: 0 0 0.35rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-family: var(--mono);
+  text-transform: uppercase;
+}
+
+.detail-value {
+  overflow-wrap: anywhere;
 }
 
 .inline-form {
@@ -320,6 +353,10 @@ textarea {
 
 @media (max-width: 720px) {
   .grid-form {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-grid {
     grid-template-columns: 1fr;
   }
 
